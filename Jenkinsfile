@@ -17,9 +17,9 @@ pipeline {
     post {
         always {
             mail bcc: '', 
-                body: """<br>Project: ${env.JOB_NAME}</br>
-                        <br>Build number: ${env.BUILD_NUMBER}</br>
-                        <br>URL: ${env.BUILD_URL}</br>""", 
+                body: """Project: ${env.JOB_NAME}
+                        Build number: ${env.BUILD_NUMBER}
+                        URL: ${env.BUILD_URL}""", 
                 cc: 'abilashp.unni@gmail.com', 
                 from: '', 
                 replyTo: '', 
