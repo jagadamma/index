@@ -9,7 +9,7 @@ pipeline {
         }
       stage ('copying the path s1') {
             steps {
-                sh 'sudo cp -r /var/lib/jenkins/workspace/myjob/index.html /usr/share/nginx/html/'
+                sh 'sudo cp -r /var/lib/jenkins/workspace/j1/index.html /usr/share/nginx/html/'
                 sh 'sudo service nginx restart'
             }
         }
