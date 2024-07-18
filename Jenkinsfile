@@ -16,9 +16,9 @@ pipeline {
     }
     post{
         always {
-           mail bcc: '', body: '''<br>project $(env.JOB_name)</br> 
+           mail bcc: '', body: """'''<br>project $(env.JOB_name)</br> 
 <br>build number:$(env.BUILD_NUMBER)</br>
-<br>url:$<env.BUILD_URL></br>''', cc: 'abilashp.unni@gmial.com', from: '', replyTo: '', subject: '$(currentBuild.result)', to: 'abilashp.unni@gmail.com'
+<br>url:$<env.BUILD_URL></br>''', cc: 'abilashp.unni@gmial.com', from: '', replyTo: '', subject: '$(currentBuild.result)'""", to: 'abilashp.unni@gmail.com'
         }
     }
 }
