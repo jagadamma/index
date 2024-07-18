@@ -16,16 +16,10 @@ pipeline {
     }
     post {
         always {
-            mail bcc: '', 
-                body: """Project: ${env.JOB_NAME}
-Build number: ${env.BUILD_NUMBER}
-URL: ${env.BUILD_URL}
-Result: ${currentBuild.result}""", 
-                cc: 'abilashp.unni@gmail.com', 
-                from: '', 
-                replyTo: '', 
-                subject: "${currentBuild.result}", 
-                to: 'abilashp.unni@gmail.com'
+      mail bcc: '', body: """project $(env.JOB_name)
+   build number:$(env.BUILD_NUMBER)
+   url:$<env.BUILD_URL>
+   Result $(currentBuild.result)""",cc: 'abilashp.unni@gmial.com', from: '', replyTo: '', subject: '$(currentBuild.result)', to: 'abilashp.unni@gmail.com'
         }
     }
 }
